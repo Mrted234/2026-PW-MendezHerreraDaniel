@@ -60,3 +60,34 @@ footer{
 .tarjeta a:hover{
     text-decoration: underline;
 }
+
+.formulario-registro{
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.formulario-registro h1{
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    text-align: center;
+    color: #161817; 
+}
+
+.formulario-registro input{
+     background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+
+
+
