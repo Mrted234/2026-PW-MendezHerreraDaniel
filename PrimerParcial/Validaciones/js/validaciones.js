@@ -1,0 +1,44 @@
+/** 
+ * Las validaciones para este formulario se
+ * realizaran mediante el uso de expresiones 
+ * regulares, las cuales las vamos a dividir en 3:
+ * 1- Texto para el nombre 
+ * 2- Numerico para la boleta 
+ * 3- Debe tener un patron para la fecha
+ * Las expresiones regulares, son patrones que nos ayudan a validar 
+ * cadenas bajo ciertas condiciones.
+ */
+
+const patrones = {
+    nombre: /^[A-Za-zÁÉÍÓÚÑáéíóúñÚü\s]{2,60}$/,
+    boleta: /^\d{10}$/,
+    fecha: /^(0[0-9]|[12]\d|3[01]\/(0[0-9])\/\d{4}$)/
+
+}  
+ 
+const mensajes = {
+nombre : "Solo letras y espacios entre 2 y 60 carecteres." ,
+boleta : "Debe tener exactamente 10 digitos numericos.",
+fecha : "La fecha debe tener el formato DD/MM/AAAA"
+}
+
+function validarCampo(campo, valor){
+return patrones[campo].test(valor.trim())
+}
+
+
+if (typeof document !== 'undefined'){
+    const formulario = document.getElementById('form-registro');
+    formulario.addEventListener('submit', (evento) => {
+        evento.preventDefault();
+        let formularioValido = true;
+        for(const campo of Object.keys(patrones)){
+        const errorSpan = document.getElementById('error-${campo}');
+        const esValido  = validarCampo(campo, input.value);
+        input.classList.toggle('invalido', !esValido)
+        spanError.textContent = esValido ? '' : mensajes[campo];
+        if(!esValido) formularioValido = false;
+}
+        })
+
+}
