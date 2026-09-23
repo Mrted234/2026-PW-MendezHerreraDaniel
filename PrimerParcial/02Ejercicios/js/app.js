@@ -9,24 +9,20 @@ const talleres = [
 
 
 function pintarTabla(){
-    //debe de obtener la tabla y rellenarla con los datos de talleres
-
-    const tabla = document.getElementById('tabla-cuerpo');
-    
-    tabla.innerHTML = '';
+    const tbody = document.querySelector('#tabla-talleres tbody');
+    tbody.innerHTML = '';
 
     talleres.forEach((taller) => {
         const fila = document.createElement('tr');
-
         fila.innerHTML = `
             <td>${taller.nombre}</td>
-            <td>${taller.instructor}</td>
+            <td>${taller.instructor}</td> 
             <td>${taller.cupo}</td>
             <td>${taller.inscritos}</td>
         `;
-
-        tabla.appendChild(fila);
+        tbody.appendChild(fila); 
     });
+
 }
 
 const formArreglos = document.getElementById('form-arreglos');
