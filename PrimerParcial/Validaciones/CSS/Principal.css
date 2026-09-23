@@ -1,0 +1,138 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    color: #1784af;
+    background-color: hsl(150, 9%, 96%);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.container {
+    width: 100%;
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+    flex: 1;
+}
+
+.content {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+.titulocontent {
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #79ebdb;
+    padding-bottom: 1.5rem;
+}
+
+.titulocontent h1:nth-child(1) {
+    font-size: 1.8rem;
+    color: rgb(15, 15, 102); 
+    margin-bottom: 0.5rem;
+}
+
+.titulocontent h1:nth-child(2) {
+    font-size: 1.2rem;
+    color: #1784af;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.titulocontent p {
+    font-size: 1rem;
+    color: #6b7280;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.tables {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+}
+
+th, td {
+    padding: 1rem;
+    text-align: left;
+}
+
+thead {
+    background-color: rgb(15, 15, 102); 
+    color: #ffffff;
+}
+
+th {
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+}
+
+tbody td {
+    color: #1784af;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+
+tbody tr:hover {
+    background-color: rgba(121, 235, 219, 0.2);
+}
+
+table a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #088bac; 
+    color: #ffffff;
+    text-decoration: none;
+    border: 1px solid #c2cfe9;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+table a:hover {
+    background-color: #79ebdb;
+    color: rgb(15, 15, 102);
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .content {
+        padding: 1rem;
+    }
+
+    .titulocontent h1:nth-child(1) {
+        font-size: 1.4rem;
+    }
+
+    .titulocontent h1:nth-child(2) {
+        font-size: 1rem;
+    }
+
+    th, td {
+        padding: 0.6rem;
+        font-size: 0.85rem;
+    }
+}
