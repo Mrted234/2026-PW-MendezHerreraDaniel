@@ -1,0 +1,204 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    color: #1784af;
+    background-color: hsl(150, 9%, 96%);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: rgb(15, 15, 102);
+    color: #ffffff;
+    padding: 1.2rem 1rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+header h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+main {
+    max-width: 960px;
+    width: 100%;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+    flex: 1;
+}
+
+.ejercicio {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.ejercicio h2 {
+    color: rgb(15, 15, 102);
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 2px solid #79ebdb;
+    padding-bottom: 0.5rem;
+}
+
+.ejercicio p {
+    color: #6b7280;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+code {
+    background-color: #85d0dd;
+    color: rgb(15, 15, 102);
+    padding: 0.15rem 0.4rem;
+    border-radius: 0.25rem;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.tabla-scroll {
+    overflow-x: auto;
+    margin-bottom: 2rem;
+    border-radius: 0.5rem;
+    border: 1px solid #e5e7eb;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+}
+
+thead {
+    background-color: rgb(15, 15, 102);
+    color: #ffffff;
+}
+
+th, td {
+    padding: 0.85rem 1rem;
+    text-align: left;
+}
+
+th {
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+tbody td {
+    color: #1784af;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+
+tbody tr:hover {
+    background-color: rgba(121, 235, 219, 0.25);
+}
+.formulario {
+    background-color: #79ebdb; /* Tarjeta turquesa como en tu catálogo */
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid #afebdf;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.campos {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.campos label {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: rgb(15, 15, 102);
+}
+
+.campos select {
+    background-color: #ffffff;
+    border: 1px solid #088bac;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.95rem;
+    color: #1784af;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.campos select:focus {
+    border-color: rgb(15, 15, 102);
+    box-shadow: 0 0 0 3px rgba(8, 139, 172, 0.2);
+}
+
+.formulario button {
+    background-color: #088bac;
+    color: #ffffff;
+    border: 1px solid #c2cfe9;
+    border-radius: 0.5rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.85rem 1.5rem;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: all 0.2s ease;
+}
+
+.formulario button:hover {
+    background-color: rgb(15, 15, 102);
+    color: #79ebdb;
+}
+
+.resultado {
+    display: block;
+    background-color: #0f172a; /* Fondo oscuro tipo consola para ver retornos JS */
+    color: #79ebdb;
+    padding: 1.2rem;
+    border-radius: 0.5rem;
+    border-left: 4px solid #088bac;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.95rem;
+    min-height: 50px;
+    white-space: pre-wrap; /* Mantiene saltos de línea al renderizar objetos o listas */
+    word-break: break-all;
+}
+
+.resultado:empty::before {
+    content: "// El resultado de la operación aparecerá aquí...";
+    color: #64748b;
+    font-style: italic;
+}
+
+@media (max-width: 600px) {
+    main {
+        padding: 0 1rem;
+        margin: 1rem auto;
+    }
+
+    .ejercicio {
+        padding: 1.25rem;
+    }
+
+    .formulario button {
+        width: 100%; /* Botón al 100% de ancho en móviles */
+    }
+}
