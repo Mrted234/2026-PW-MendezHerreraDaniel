@@ -8,21 +8,22 @@ const talleres = [
 ];
 
 
-function pintarTabla(){
-    const tbody = document.querySelector('#tabla-talleres tbody');
-    tbody.innerHTML = '';
+function pintarTabla() {
+  const tbody = document.getElementById('tbody-talleres');
+  if (!tbody) return;
 
-    talleres.forEach((taller) => {
-        const fila = document.createElement('tr');
-        fila.innerHTML = `
-            <td>${taller.nombre}</td>
-            <td>${taller.instructor}</td> 
-            <td>${taller.cupo}</td>
-            <td>${taller.inscritos}</td>
-        `;
-        tbody.appendChild(fila); 
-    });
+  tbody.innerHTML = '';
 
+  talleres.forEach((taller) => {
+    const fila = document.createElement('tr');
+    fila.innerHTML = `
+      <td>${taller.nombre}</td>
+      <td>${taller.instructor}</td> 
+      <td>${taller.cupo}</td>
+      <td>${taller.inscritos}</td>
+    `;
+    tbody.appendChild(fila); 
+  });
 }
 
 const formArreglos = document.getElementById('form-arreglos');
