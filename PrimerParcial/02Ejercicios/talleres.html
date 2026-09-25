@@ -43,6 +43,42 @@
             </form>
             <output class="resultado" id="resultado-arreglo" for="form-arreglos"></output>
         </section>
+
+        <section class="ejercicio" aria-labelledby="titulo-objeto">
+            <h2 id="titulo-objeto">Manejo de objetos y JSON</h2>
+            <p>Edita el taller y elije que operacion deseas aplicar</p>
+
+            <form id="form-objeto" class="formulario">
+                <div class="campo">
+                    <label for="obj-instructor">Instructor</label>
+                    <input type="text" name="obj-instructor" id="obj-instructor"
+                    value="Ing. María López">
+                </div>
+                <div class="campo">
+                    <label for="obj-cupo">Cupo</label>
+                    <input type="text" name="obj-cupo" id="obj-cupo"
+                    value="25" min="0">
+                </div>
+                <div class="campo">
+                    <label for="obj-inscritos">Inscritos</label>
+                    <input type="text" name="obj-inscritos" id="obj-inscritos"
+                    value="25" min="0">
+                </div>
+                <div class="campo">
+                    <label for="operacion-objeto">Tipo de operacion</label>
+                    <select name="operacion-objeto" id="operacion-objeto">
+                        <option value="keys">Object.keys</option>
+                        <option value="values">Object.values</option>
+                        <option value="entries">Object.entries</option>
+                        <option value="stringify">JSON A Cadana</option>
+                        <option value="roundtrip">Ida y Vuelta (JSONN a Cadena)</option>
+                    </select>
+                </div>
+                <button type="submit">Ejecutar opcion</button>
+            </form>
+            <output class="resultado" id="resultado-objeto" for="form-objeto"></output>
+
+        </section>
     </main>
 
     <script src="./js/app.js"></script>
