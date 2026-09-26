@@ -83,7 +83,7 @@ formObjeto.addEventListener('submit', (evento) => {
             ${valor}`).join('\n');
             break;
         case 'stringify':
-            
+            resultado = JSON.stringify(taller, null, 2);
             break;
         case 'roundtrip':
             const textoJson = JSON.stringify(taller, null, 2);
