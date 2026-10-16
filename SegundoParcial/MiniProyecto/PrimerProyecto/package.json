@@ -1,7 +1,7 @@
 {
   "name": "primerproyecto",
   "version": "1.0.0",
-  "description": "",
+  "description": "\"Este es un ejemplo de Proyecto Express\"",
   "license": "ISC",
   "author": "Daniel Mendez",
   "type": "commonjs",
@@ -12,7 +12,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "express": "^5.2.1",
+    "express": "^5.3.0",
     "next": "^16.4.0",
     "react": "^19.3.0",
     "react-dom": "^19.3.0"
