@@ -1,14 +1,18 @@
 const mysql = require("mysql2/promise")
-
- /**
-  * 
-  */
-
- const pool = mysql.createPool({
+ 
+/**
+ * La base de datos local la usare,ps ára verificar pruebas internas, se buscara que deben de crear cada uno una cuenta en
+ * supabase.com y generaremos una api para conectarnos a un servicio
+ * en bd en la nube, para ello debemos configurar el archivo .env
+ *  Representa la capa de datos y la lógica de negocio. Se encarga de consultar, almacenar, validar y modificar la información
+ */
+ 
+const pool = mysql.createPool({
     host: "localhost",
     port: "3306",
     user: "root",
     password: "Matildo09+",
     database: "cecyt9_local",
-    dateStrings: "true"
- })
+    dateStrings: true
+
+})
