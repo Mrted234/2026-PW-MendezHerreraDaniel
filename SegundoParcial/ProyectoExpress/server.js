@@ -1,26 +1,27 @@
-const express = require("express")
+// server.js — backend de práctica de la actividad autónoma (semana 9).
+// Mismas rutas y controladores que backend-proyecto; solo la carpeta models/ guarda los datos en memoria,
+// así que arranca sin MySQL, sin Supabase y sin .env. No lo modifiques: tu trabajo de esta semana es el front.
+const express = require('express');
+const cors = require('cors');
 
-const app = express()
+const talleresRoutes = require('./routes/talleres.routes');
+const asistenciasRoutes = require('./routes/asistencias.routes');
+const usuariosRoutes = require('./routes/usuarios.routes');
 
-app.use(express.json())
+const app = express();
+app.use(cors());
+app.use(express.json());
 
-const PORT = 4000
+// Ruta de prueba para verificar que el servidor está vivo
+app.get('/', (req, res) => {
+  res.json({ mensaje: 'API de Registro de Asistencia - CECyT 9 funcionando correctamente (datos en memoria)' });
+});
 
-//ejemplo de una peticion por medio de una ruta principal GET
+app.use(talleresRoutes);
+app.use(asistenciasRoutes);
+app.use(usuariosRoutes);
 
-app.get('/saludo', (req, res) => {
-    res.json({mensaje:'Hola esto es una prueba en GET'})
-})
-
-app.post('/eco', (req, res) =>{
-    const {texto} = req.body
-    if(!texto){
-        return res.status(400).json({error:'El texto es obligatorio'})
-    }
-    res.status(201).json({eco:texto})
-
-})
-
-app.listen(PORT, ()=>{
-    console.log(`Servidor escuchando en el puerto ${PORT}`)
-})
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => {
+  console.log(`Servidor escuchando en el puerto ${PORT} (BD: memoria; los datos vuelven al inicio al reiniciar)`);
+});
