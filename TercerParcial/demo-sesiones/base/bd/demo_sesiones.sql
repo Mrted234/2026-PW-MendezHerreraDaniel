@@ -31,6 +31,13 @@ CREATE TABLE sessions (
   PRIMARY KEY (session_id)
 );
 
+CREATE TABLE tokens_revocados (
+  jti VARCHAR(64) PRIMARY KEY,
+  usuario VARCHAR(50) NOT NULL,
+  expira DATETIME NOT NULL,
+  revocado_en DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
 -- Contraseñas: ana12345, luis12345 y admin12345
 INSERT INTO usuarios (usuario, nombre, rol, contrasena_hash) VALUES
   ('ana', 'Ana López', 'alumno', '$2a$10$zngOdAyKeY6JTTKdax4nwu9nq7YOkXlSCCfouJLolZF6JR0QIabSy'),
